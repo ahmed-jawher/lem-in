@@ -34,7 +34,7 @@ func ParseFile(filename string) {
 
         if firstLine {
             numAnts, err := strconv.ParseInt(line, 10, 64)
-            if err != nil || numAnts <= 0 {
+            if err != nil || numAnts <= 0 || numAnts>999999 {
                 core.HandleDataError("invalid number of ants")
             }
             core.AntsNum = int(numAnts)
